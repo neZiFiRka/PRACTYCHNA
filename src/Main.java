@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-// DTO клас
+// DTO
 class DataTransferObject {
     private String name;
     private int age;
@@ -11,7 +11,7 @@ class DataTransferObject {
         this.age = age;
     }
 
-    // Геттери та сеттери
+    // Геттери сеттери
 
     public String getName() {
         return name;
@@ -70,6 +70,19 @@ public class Main {
     private static final CRUDOperations crudOperations = new CRUDOperations();
 
     public static void main(String[] args) {
+        // Додавання 5 готових контактів
+        DataTransferObject contact1 = new DataTransferObject("John Doe", 30);
+        DataTransferObject contact2 = new DataTransferObject("Jane Smith", 25);
+        DataTransferObject contact3 = new DataTransferObject("David Johnson", 40);
+        DataTransferObject contact4 = new DataTransferObject("Sarah Williams", 35);
+        DataTransferObject contact5 = new DataTransferObject("Michael Brown", 50);
+
+        crudOperations.createData(contact1);
+        crudOperations.createData(contact2);
+        crudOperations.createData(contact3);
+        crudOperations.createData(contact4);
+        crudOperations.createData(contact5);
+
         while (true) {
             System.out.print("Введіть команду: ");
             String command = scanner.nextLine().trim();
@@ -90,6 +103,7 @@ public class Main {
             }
         }
     }
+
 
     private static void printHelp() {
         System.out.println("Список команд:");
